@@ -57,7 +57,9 @@ import com.example.unscramble.R
 import com.example.unscramble.ui.theme.UnscrambleTheme
 
 @Composable
-fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
+fun GameScreen(
+    gameViewModel: GameViewModel = viewModel()
+) {
     val gameUiState by gameViewModel.uiState.collectAsState()
     val mediumPadding = dimensionResource(R.dimen.padding_medium)
 
@@ -123,6 +125,8 @@ fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
                 onPlayAgain = { gameViewModel.resetGame() }
             )
         }
+
+
     }
 }
 
@@ -136,7 +140,6 @@ fun GameStatus(score: Int, modifier: Modifier = Modifier) {
             style = typography.headlineMedium,
             modifier = Modifier.padding(8.dp)
         )
-
     }
 }
 
